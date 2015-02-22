@@ -15,12 +15,21 @@ dayz_previousID = 0;
 //disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
 //disable radio messages to be heard and shown in the left lower corner of the screen
-enableRadio false;
+enableRadio true;
 // May prevent "how are you civillian?" messages from NPC
 enableSentences false;
 
 // DayZ Epochconfig
 spawnShoremode = 1; // Default = 1 (on shore)
+DZE_PlotPole=[50,0];
+DZE_SelfTransfuse = true; // default value
+DZE_selfTransfuse_Values = [12000, 15, 300]; // default value
+DZE_TRADER_SPAWNMODE = false;
+DZE_GodModeBase = true;
+DZE_BuildingLimit = 450;
+DZE_DeathMsgGlobal = true;
+DZE_MissionLootTable = true;
+spawnShoremode = 0; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 // 
 MaxVehicleLimit = 300; // Default = 50
@@ -78,10 +87,15 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
+	[] execVM "custom\startup\Server_WelcomeCredits.sqf";  //napisy po prawej stronie
+	[] execVM "custom\service_point\service_point.sqf";   //refuel, repair, reammo
 	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
 	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
+	
+	//Custom Loadouts
+	[] ExecVM "custom\loadout\loadout.sqf";
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
@@ -99,7 +113,10 @@ execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
 
+[] execVM "custom\marker\marker.sqf";
 
+execVM "custom\safezone\safezone.sqf";
+execVM "custom\ActionMenu\actionmenu_activate.sqf";
 
 //---Single Coin Currency--- and this completely at the bottom
         execVM "gold\init.sqf";

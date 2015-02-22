@@ -1,4 +1,4 @@
-[] spawn {[] execVM "\z\addons\dayz_server\init\AH.sqf";};
+[] execVM "\z\addons\dayz_server\init\AH.sqf";
 waituntil {!isnil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer = {
@@ -31,6 +31,7 @@ server_maintainArea = 			compile preprocessFileLineNumbers "\z\addons\dayz_serve
 
 /* PVS/PVC - Skaronator */
 server_sendToClient =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_sendToClient.sqf";
+#include "\z\addons\dayz_server\napfbanks\bankinit.sqf"
 
 //onPlayerConnected 			{[_uid,_name] call server_onPlayerConnect;};
 onPlayerDisconnected 		{[_uid,_name] call server_onPlayerDisconnect;};
@@ -504,14 +505,14 @@ if(isnil "DynamicVehicleDamageLow") then {
 	DynamicVehicleDamageLow = 0;
 };
 if(isnil "DynamicVehicleDamageHigh") then {
-	DynamicVehicleDamageHigh = 100;
+	DynamicVehicleDamageHigh = 65;
 };
 
 if(isnil "DynamicVehicleFuelLow") then {
-	DynamicVehicleFuelLow = 0;
+	DynamicVehicleFuelLow = 10;
 };
 if(isnil "DynamicVehicleFuelHigh") then {
-	DynamicVehicleFuelHigh = 100;
+	DynamicVehicleFuelHigh = 80;
 };
 
 if(isnil "DZE_DiagFpsSlow") then {

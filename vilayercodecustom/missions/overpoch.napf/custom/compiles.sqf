@@ -81,6 +81,7 @@ SC_fnc_addCoins =
 fnc_usec_selfActions = compile preprocessFileLineNumbers "custom\fn_selfActions.sqf";            // fnc_usec_selfActions - adds custom actions to dayz code
 player_build =				compile preprocessFileLineNumbers "custom\building\player_build.sqf";
 player_wearClothes =		compile preprocessFileLineNumbers "custom\player_wearClothes.sqf";
+player_switchModel =		compile preprocessFileLineNumbers "custom\player_switchModel.sqf";
 
 /*PlotManagement Zupa*/
 	PlotGetFriends      = compile preprocessFileLineNumbers "plotManagement\plotGetFriends.sqf";

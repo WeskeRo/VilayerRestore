@@ -186,13 +186,13 @@ class RscTextGUIK {
 };
 
 //----Single Coin Currency----//
-#include "custom\defines.hpp"
+#include "plotManagement\defines.hpp"
 #include "gold\common.hpp"
 #include "gold\bank_dialog.hpp"
 #include "gold\give_player_dialog.hpp"
 
 //----PlotManagement----//
-#include "plotManagement\defines.hpp"
+
 #include "plotManagement\plotManagement.hpp"
 
 //----DoorManagement----//
