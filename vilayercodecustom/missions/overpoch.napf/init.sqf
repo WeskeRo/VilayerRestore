@@ -89,6 +89,8 @@ if (isServer) then {
 if (!isDedicated) then {
 	[] execVM "custom\startup\Server_WelcomeCredits.sqf";  //napisy po prawej stronie
 	[] execVM "custom\service_point\service_point.sqf";   //refuel, repair, reammo
+	[] execVM "TradeFromVehicle Version 2.0\setup\init.sqf";
+
 	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};

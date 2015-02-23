@@ -141,7 +141,7 @@ if (_dikCode in actionKeys "Chat" and (diag_tickTime - dayz_lastCheckBit > 10)) 
 };
 if (_dikCode in actionKeys "User20" and (diag_tickTime - dayz_lastCheckBit > 5)) then {
 	dayz_lastCheckBit = diag_tickTime;
-	_nill = execvm "custom\custom_files\playerstats.sqf";
+	_nill = execvm "custom\playerstats.sqf";
 };
 
 // numpad 8 0x48 now pgup 0xC9 1
@@ -192,6 +192,14 @@ if (_dikCode == 0x39 or (_dikCode in actionKeys "User19")) then {
 // F key
 if ((_dikCode == 0x21 and (!_alt and !_ctrl)) or (_dikCode in actionKeys "User6")) then {
 	DZE_F = true;
+};
+//DZGM
+if ((_dikCode == 0xDB) or (_dikCode == 0xDC)) then {
+    if (tagname) then {tagname = false;} else {tagname = true;};
+};
+
+if (_dikCode in actionKeys "TacticalView") then {
+    execVM "dzgm\noTactical.sqf";
 };
 
 _handled
