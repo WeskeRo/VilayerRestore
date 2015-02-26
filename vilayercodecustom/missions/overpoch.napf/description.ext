@@ -189,10 +189,7 @@ class RscTextGUIK {
 #include "custom\custom_files\extra_rc.hpp"
 
 #include "dzgm\defines.hpp"
-class RscTitles
-{
-    #include "dzgm\icons.hpp"
-};
+
 
 
 //----Single Coin Currency----//
