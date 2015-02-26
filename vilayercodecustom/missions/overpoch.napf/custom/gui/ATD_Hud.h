@@ -1,12 +1,4 @@
-﻿#define CT_STATIC 0
-#define ST_LEFT           0x00
-#define ST_PICTURE        48
-
-
-class RscTitles 
-{
-#include "..\dzgm\icons.hpp"
-class playerStatusGUI {
+﻿class playerStatusGUI {
         idd = 6900;
         movingEnable = 0;
         duration = 100000;
@@ -357,4 +349,3 @@ class playerStatusGUI {
             };
         };
     };
-};

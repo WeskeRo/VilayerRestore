@@ -186,14 +186,22 @@ class RscTextGUIK {
     h = 0.2;
 };
 
+
+#include "plotManagement\defines.hpp"
 #include "custom\custom_files\extra_rc.hpp"
 
 #include "dzgm\defines.hpp"
 
+class RscTitles
+{
+  #include "dzgm\icons.hpp"
+	//----Custom GUI----//
+	#include "custom\gui\ATD_Hud.h"
 
+};
 
 //----Single Coin Currency----//
-#include "plotManagement\defines.hpp"
+
 #include "gold\common.hpp"
 #include "gold\bank_dialog.hpp"
 #include "gold\give_player_dialog.hpp"
@@ -211,7 +219,7 @@ class RscTextGUIK {
 #include "custom\snap_pro\snappoints.hpp"
 
 //----Custom GUI----//
-#include "custom\gui\ATD_Hud.h"
+#include "custom\gui\ATD_Hud2.h"
 
 //----GroupManagement----//
 #include "dzgm\groupManagement.hpp"
