@@ -102,7 +102,7 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-	
+	[] execVM "dzgm\init.sqf";
 	
 
 	//Lights
@@ -110,15 +110,15 @@ if (!isDedicated) then {
 };
 
 //Start Dynamic Weather
-execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
+[] execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
 
 [] execVM "custom\marker\marker.sqf";
 
-execVM "custom\safezone\safezone.sqf";
-execVM "custom\ActionMenu\actionmenu_activate.sqf";
+[] execVM "custom\safezone\safezone.sqf";
+[] execVM "custom\ActionMenu\actionmenu_activate.sqf";
 
 //---Single Coin Currency--- and this completely at the bottom
         execVM "gold\init.sqf";

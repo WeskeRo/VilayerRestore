@@ -8,12 +8,13 @@ OnLoadMissionTime = False;
 disabledAI = true;
 disableChannels[]={0,2,6};
 enableItemsDropping=0;
+#include "custom\customloot\CfgBuildingLoot.hpp"
 
 briefing = 0;
 debriefing = 0;
 
 onPauseScript = "";
-loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+loadScreen = "custom\startup\load.jpg";
 
 class Header
 {
@@ -185,6 +186,15 @@ class RscTextGUIK {
     h = 0.2;
 };
 
+#include "custom\custom_files\extra_rc.hpp"
+
+#include "dzgm\defines.hpp"
+class RscTitles
+{
+    #include "dzgm\icons.hpp"
+};
+
+
 //----Single Coin Currency----//
 #include "plotManagement\defines.hpp"
 #include "gold\common.hpp"
@@ -205,3 +215,6 @@ class RscTextGUIK {
 
 //----Custom GUI----//
 #include "custom\gui\ATD_Hud.h"
+
+//----GroupManagement----//
+#include "dzgm\groupManagement.hpp"
