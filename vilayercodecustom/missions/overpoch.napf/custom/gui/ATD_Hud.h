@@ -5,6 +5,7 @@
 
 class RscTitles 
 {
+#include "..\dzgm\icons.hpp"
 class playerStatusGUI {
         idd = 6900;
         movingEnable = 0;
