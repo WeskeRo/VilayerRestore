@@ -449,6 +449,7 @@ if (count _worldspace >= 3) then{
 	};
 
 	allowConnection = true;	
+	"\z\addons\dayz_server\WAI\init.sqf";
 	sm_done = true;
 	publicVariable "sm_done";
 };

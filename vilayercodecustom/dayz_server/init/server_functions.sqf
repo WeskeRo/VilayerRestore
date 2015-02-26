@@ -855,7 +855,7 @@ server_checkHackers = {
 	DZE_DYN_HackerCheck = true;
 	{
 	if (!((isNil "_x") || {(isNull _x)})) then {
-		if(vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x)  && !((typeOf vehicle _x) in DZE_safeVehicle)) then {
+		if(vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x)  && !((typeOf vehicle _x) in DZE_safeVehicle)&& (vehicle _x getVariable ["MalSar",0] !=1)) then {
 			diag_log ("CLEANUP: KILLING A HACKER " + (name _x) + " " + str(_x) + " IN " + (typeOf vehicle _x));
 			(vehicle _x) setDamage 1;
 			_x setDamage 1;
@@ -970,4 +970,21 @@ server_logUnlockLockEvent = {
 		diag_log format["SAFE %5: ID:%1 UID:%2 BY %3(%4)", _objectID, _objectUID, (name _player), (getPlayerUID _player), _statusText];
 	};
 };
+
+execVM "\z\addons\dayz_server\map\bandit_outpost.sqf";
+execVM "\z\addons\dayz_server\map\airport.sqf";
+execVM "\z\addons\dayz_server\map\castle_czarek.sqf";
+execVM "\z\addons\dayz_server\map\castle_pati.sqf";
+execVM "\z\addons\dayz_server\map\omega.sqf";
+execVM "\z\addons\dayz_server\map\NapfEventZone.sqf";
+execVM "\z\addons\dayz_server\map\adminbase.sqf";
+
+execVM "\z\addons\dayz_server\map\teleporter_buildings.sqf";
+execVM "\z\addons\dayz_server\map\revo_trader.sqf";
+execVM "\z\addons\dayz_server\map\misja_ikea.sqf";
+//execVM "\z\addons\dayz_server\map\cave.sqf";
+
+execVM "\z\addons\dayz_server\map\insel.sqf";
+execVM "\z\addons\dayz_server\map\brucke.sqf";
+execVM "\z\addons\dayz_server\map\crates.sqf";
 execVM "\z\addons\dayz_server\init\broadcaster.sqf";
