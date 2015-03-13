@@ -89,6 +89,7 @@ class CfgSounds
     sound[]={custom\ActionMenu\fun\dance3.ogg,0.9,1};
     titles[] = {};
     };
+};
 class RscLoadingText : RscText
 {
 	style = 2;

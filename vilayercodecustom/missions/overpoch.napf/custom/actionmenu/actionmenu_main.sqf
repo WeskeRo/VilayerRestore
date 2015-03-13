@@ -30,7 +30,6 @@ ActionMenu =
 		["Action Menu", [2], "#USER:ActionMenua", -5, [["expression", ""]], "1", "1"],
 		["Deploy Menu", [3], "#USER:DeployMenu", -5, [["expression", ""]], "1", "1"],
 		["View Distance (Fog)", [5], "#USER:FogMenu", -5, [["expression", ""]], "1", "1"],
-		["Donations", [6], "#USER:DonatorMenu", -5, [["expression", ""]], "1", "1"],
 	    ["FunMenu", [7], "#USER:FunMenu", -5, [["expression", ""]], "1", "1"],
             ["", [-1], "", -5, [["expression", ""]], "1", "0"],
             ["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
