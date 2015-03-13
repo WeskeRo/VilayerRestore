@@ -1,6 +1,7 @@
-player playMove "ActsPercMstpSnonWnonDnon_DancingStefan";
-_isDancing = ["ActsPercMstpSnonWnonDnon_DancingStefan",_animState] call fnc_inString;
-_nul = [objNull, player, rSAY, "badb"] call RE;
+player playMove "ActsPercMstpSnonWnonDnon_DancingDuoIvan";
+_isDancing = ["ActsPercMstpSnonWnonDnon_DancingDuoIvan",_animState] call fnc_inString;
+_nul = [objNull, player, rSAY, "dance2"] call RE; // This is a RPC sound call for the gangnamstyle
+//playSound "chwytak";
 
 r_interrupt = false;
 _animState = animationState player;
@@ -10,7 +11,7 @@ _finished = false;
  
     while {r_doLoop} do {
         _animState = animationState player;
-        _isDancing = ["ActsPercMstpSnonWnonDnon_DancingDuoStefan",_animState] call fnc_inString;
+        _isDancing = ["ActsPercMstpSnonWnonDnon_DancingDuoIvan",_animState] call fnc_inString;
         if (_isDancing) then {
             _started = true;
         };

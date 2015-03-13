@@ -672,6 +672,13 @@ dayz_recordLogin = {
 	_key call server_hiveWrite;
 };
 
+//ZEVMission init ->
+if (isServer) then 
+{ 
+	[] execVM "\z\addons\dayz_server\ZEV\ZEVMissionInit.sqf";
+};
+//ZEVMission init <-
+
 currentInvites = [];
 publicVariable "currentInvites";
 

@@ -58,6 +58,37 @@ class RscPicture
 	lineSpacing=0;
 	text="";
 };
+
+class CfgSounds
+{
+    sounds[] =
+    {
+    introSong, dance1, dance2, dance3
+    };
+    class introSong
+    {
+    name="introSong";
+    sound[]={custom\startup\introSong.ogg,0.9,1};
+    titles[] = {};
+    };
+	class dance1
+    {
+    name="dance1";
+    sound[]={custom\Actionmenu\Fun\dance1.ogg,0.9,1};
+    titles[] = {};
+    };
+	class dance2
+    {
+    name="dance2";
+    sound[]={custom\Actionmenu\Fun\dance2.ogg,0.9,1};
+    titles[] = {};
+    };
+	class dance3
+    {
+    name="dance3";
+    sound[]={custom\ActionMenu\fun\dance3.ogg,0.9,1};
+    titles[] = {};
+    };
 class RscLoadingText : RscText
 {
 	style = 2;

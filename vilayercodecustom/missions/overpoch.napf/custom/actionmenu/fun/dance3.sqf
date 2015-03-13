@@ -1,6 +1,6 @@
-player playMove "ActsPercMstpSnonWnonDnon_DancingStefan";
-_isDancing = ["ActsPercMstpSnonWnonDnon_DancingStefan",_animState] call fnc_inString;
-_nul = [objNull, player, rSAY, "revolution"] call RE; // This is a RPC sound call for the gangnamstyle
+player playMove "ActsPercMstpSnonWnonDnon_DancingDuoStefan";
+_isDancing = ["ActsPercMstpSnonWnonDnon_DancingDuoStefan",_animState] call fnc_inString;
+_nul = [objNull, player, rSAY, "dance3"] call RE; // This is a RPC sound call for the gangnamstyle
 
 r_interrupt = false;
 _animState = animationState player;

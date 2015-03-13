@@ -72,7 +72,8 @@ progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
-call compile preprocessFileLineNumbers "custom\compiles.sqf";	
+call compile preprocessFileLineNumbers "custom\compiles.sqf";
+call compile preprocessFileLineNumbers "logistic\init.sqf";	
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
@@ -110,7 +111,7 @@ if (!isDedicated) then {
 };
 
 //Start Dynamic Weather
-[] execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
+//[] execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 

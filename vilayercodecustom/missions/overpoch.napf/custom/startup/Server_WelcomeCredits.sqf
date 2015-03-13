@@ -37,12 +37,14 @@ _onScreenTime = 6; //how long one role should stay on screen. Use value from 0 t
 // SCRIPT START
  
 waitUntil {!isNil "dayz_animalCheck"};
+
 sleep 10; //Wait in seconds before the credits start after player IS ingame
+playsound "introSong";
  
 _role1 = "REVOLUTION";
 _role1names = ["Welcome to the REVOLUTION", "This is long term server!", "Map is Napf", "Have Fun and Enjoy"];
 _role2 = "ADMINS";
-_role2names = ["GH0ST","WeskeR","OmegaGod","We speak english, german, polish"];
+_role2names = ["GH0ST","WeskeR","OmegaGod","Sagrath","We speak english, german, polish"];
 _role3 = "SERVER MODS";
 _role3names = ["Gold Coin Currency", "Transport System", "Lift-Tow", "Custom Traders", "Supply Drops", "Admins Missions", "And many many more"];
 _role4 = "RULES";

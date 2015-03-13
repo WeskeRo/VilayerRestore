@@ -12,12 +12,6 @@ class Mission
 		"dayz_equip",
 		"dayz_epoch",
 		"dayz_vehicles",
-		"FHQ_Remington",
-                "FHQ_Remington_ammo",
-                "FHQ_Remington_msr",
-                "FHQ_Remington_xm2010",
-                "FHQ_Remington_acr",
-                "FHQ_Remington_rsass",
 		"cacharacters_pmc",
 		"ca_modules_functions",
 		"warfarebuildings",
@@ -26,7 +20,33 @@ class Mission
 		"csj_gyroac",
 		"map_eu",
 		"jetskiyanahuiaddon",
-		"vilas_wwp_co"
+		"gms_k98",
+		"RH_m14",
+		"FHQ_Remington",
+		"FHQ_Remington_ammo",
+		"FHQ_Remington_msr",
+		"FHQ_Remington_xm2010",
+		"FHQ_Remington_acr",
+		"FHQ_Remington_rsass",
+		"VILAS_WWP",
+		"VILAS_RW_Forces",
+		"VILAS_WWP_CO",
+		"VILAS_RW_Forces_CO",
+		"ddopp_taserpack",
+		"smk_anims_lite",
+		"MicroAirVehicles",
+		"oz_is_objects",
+		"gsc_units_stalker_patch",
+		"nissan_350z",
+		"monaro",
+		"kpfswaysigns",
+		"bb_mercenary",
+		"aif_arma1buildings",
+		"american_law_enforcement",
+		"goosuksf",
+		"CYBP_Camels_Config",
+		"ussr_cheytac"
+		
 	};
 	addOnsAuto[]=
 	{
@@ -37,8 +57,8 @@ class Mission
 	randomSeed=11171215;
 	class Intel
 	{
-		briefingName="DayZ Epoch Napf";
-		briefingDescription="DayZ Epoch Napf";
+		briefingName="DayZ Revolution Napf";
+		briefingDescription="www.dayz-revolution-enjin.com";
 		startWeather=0.067362607;
 		forecastWeather=0.52341133;
 		year=2008;
@@ -1180,7 +1200,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=23;
+		items=30;
 		class Item0
 		{
 			position[]={10010.905,110.96082,10448.559};
@@ -1195,78 +1215,121 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={1511.1515,6.4048538,11479.399};
+			position[]={3106.1731, 0, 8074.8193};
 			name="spawn0";
 			type="Empty";
 		};
 		class Item3
 		{
-			position[]={6946.2808,7.0185013,17384.557};
+			position[]={7681.4932, 0, 2155.9546};
 			name="spawn1";
 			type="Empty";
 		};
 		class Item4
 		{
-			position[]={5410.916,7.2133398,16675.912};
+			position[]={12874.119, 0, 4443.6133};
 			name="spawn2";
 			type="Empty";
 		};
 		class Item5
 		{
-			position[]={4672.4092,8.506402,14940.254};
+			position[]={17304.191, 0, 4080.4932};
 			name="spawn3";
 			type="Empty";
 		};
 		class Item6
 		{
-			position[]={2719.9617,3.2610674,12226.175};
+			position[]={14943.905, 0, 7748.0117};
 			name="spawn4";
 			type="Empty";
 		};
 		class Item7
 		{
-			position[]={12231.441,2.585845,16319.117};
+			position[]={17413.123, 0, 10834.536};
 			name="spawn5";
 			type="Empty";
 		};
 		class Item8
 		{
-			position[]={4104.0498,22.422367,13025.828};
+			position[]={13418.798, 0, 13158.507};
 			name="spawn6";
 			type="Empty";
 		};
 		class Item9
 		{
-			position[]={1460.7332,0.55348521,10583.732};
+			position[]={9242.9111, 0, 14465.741};
 			name="spawn7";
 			type="Empty";
 		};
 		class Item10
 		{
-			position[]={10282.8,23.0424,18449.203};
+			position[]={7427.3086, 0, 10071.982};
 			name="spawn8";
 			type="Empty";
 		};
 		class Item11
 		{
-			position[]={12861.892,2.1743674,14849.523};
+			position[]={7463.6221, 0, 6331.8408};
 			name="spawn9";
 			type="Empty";
 		};
 		class Item12
 		{
-			position[]={10709.255,33.675358,17085.104};
+			position[]={10804.331, 0, 7929.5713};
 			name="spawn10";
 			type="Empty";
 		};
 		class Item13
+		{
+			position[]={13818.232, 0, 10798.223};
+			name="spawn11";
+			type="Empty";
+		};
+		class Item14
+		{
+			position[]={4522.3462, 0, 14320.493};
+			name="spawn12";
+			type="Empty";
+		};
+		class Item15
+		{
+			position[]={10768.013, 0, 19622.051};
+			name="spawn13";
+			type="Empty";
+		};
+		class Item16
+		{
+			position[]={16069.571, 0, 15772.973};
+			name="spawn14";
+			type="Empty";
+		};
+		class Item17
+		{
+			position[]={10550.141, 0, 1720.21};
+			name="spawn15";
+			type="Empty";
+		};
+		class Item18
+		{
+			position[]={4050.2808, 0, 2991.1304};
+			name="spawn16";
+			type="Empty";
+		};
+		class Item19
+		{
+			position[]={2125.741, 0, 12141.768};
+			name="spawn17";
+			type="Empty";
+		};
+		
+		class Item20
 		{
 			position[]={8246.7275,15.544708,15490.344};
 			name="NeutralTraderCity";
 			text="Trader City Lenzburg";
 			type="mil_circle";
 		};
-		class Item14
+		class Item21
 		{
 			position[]={12397.357,216.53304,5068.0298};
 			name="FriendlyTraderCity";
@@ -1274,7 +1337,7 @@ class Mission
 			type="mil_circle";
 			colorName="ColorGreen";
 		};
-		class Item15
+		class Item22
 		{
 			position[]={5150.6099,71.601753,4862.3594};
 			name="HeroVendor";
@@ -1282,7 +1345,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlue";
 		};
-		class Item16
+		class Item23
 		{
 			position[]={15128.379,19.974716,16421.879};
 			name="UnarmedAirVehicles";
@@ -1290,7 +1353,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item17
+		class Item24
 		{
 			position[]={2125.5425,13.000834,7807.833};
 			name="West Wholesaler";
@@ -1298,7 +1361,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item18
+		class Item25
 		{
 			position[]={5372.1465,5.0164638,16091.704};
 			name="NorthWholesaler";
@@ -1306,7 +1369,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item19
+		class Item26
 		{
 			position[]={6776.3237,-0.25546163,16955.648};
 			name="NorthBoatVendor";
@@ -1314,7 +1377,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item20
+		class Item27
 		{
 			position[]={10404.296,106.05455,8282.8232};
 			name="BanditVendor";
@@ -1322,7 +1385,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorRed";
 		};
-		class Item21
+		class Item28
 		{
 			position[]={16835.688,-2.917357,5268.064};
 			name="SouthBoatVendor";
@@ -1330,7 +1393,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item22
+		class Item29
 		{
 			position[]={15520.298,5.3862243,13225.447};
 			name="NeutralTraderCIty2";
@@ -1341,7 +1404,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=10;
+		items=21;
 		class Item0
 		{
 			position[]={8246.3184,15.544708,15485.867};
@@ -1351,8 +1414,8 @@ class Mission
 			age="UNKNOWN";
 			name="Lenz";
 			expCond="(player distance Lenz) < 50;";
-			expActiv="[""trader city Lenzburg"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""trader city Lenzburg"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1368,8 +1431,8 @@ class Mission
 			age="UNKNOWN";
 			name="Emmen";
 			expCond="(player distance Emmen) < 100;";
-			expActiv="[""trader city Emmen"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""trader city Emmen"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1385,8 +1448,8 @@ class Mission
 			age="UNKNOWN";
 			name="Schratten";
 			expCond="(player distance Schratten) < 75;";
-			expActiv="[""trader city Schratten"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""trader city Schratten"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1400,8 +1463,8 @@ class Mission
 			age="UNKNOWN";
 			name="Bandit";
 			expCond="(player distance Bandit) < 50;";
-			expActiv="[""Bandit Camp"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Bandit Camp"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1415,8 +1478,8 @@ class Mission
 			age="UNKNOWN";
 			name="Hero";
 			expCond="(player distance Hero) < 50;";
-			expActiv="[""Hero Vendor"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Hero Vendor"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1430,8 +1493,8 @@ class Mission
 			age="UNKNOWN";
 			name="Wholesale1";
 			expCond="(player distance Wholesale1) < 50;";
-			expActiv="[""West Wholesaler"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""West Wholesaler"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1445,8 +1508,8 @@ class Mission
 			age="UNKNOWN";
 			name="Wholesaler";
 			expCond="(player distance Wholesaler) < 50;";
-			expActiv="[""Wholesaler"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Wholesaler"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1460,8 +1523,8 @@ class Mission
 			age="UNKNOWN";
 			name="Boat1";
 			expCond="(player distance boat1) < 50;";
-			expActiv="[""Boat Vendor"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Boat Vendor"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1475,8 +1538,8 @@ class Mission
 			age="UNKNOWN";
 			name="Boat2";
 			expCond="(player distance boat2) < 50;";
-			expActiv="[""Boat Vendor"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Boat Vendor"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1490,8 +1553,203 @@ class Mission
 			age="UNKNOWN";
 			name="AWOL";
 			expCond="(player distance awol) < 75;";
-			expActiv="[""Aircraft Vendor"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Aircraft Vendor"",true,""leave""] spawn player_traderCity;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
+			class Effects
+			{
+			};
+		};
+		class Item10
+		{
+            position[]={3845.9675, 0, 11065.986};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West,1] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item11
+		{
+            position[]={5296.1216, 0, 15000.634};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West2";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West2,1] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item12
+		{
+            position[]={11880.815, 0, 14952.597};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West3";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West3,1] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item13
+		{
+            position[]={6841.9131, 0, 5246.2349};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West4";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West4,1] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item14
+		{
+            position[]={13315.235, 0, 10228.215};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West5";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West5,1] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item15
+		{
+            position[]={1141.8518, 0, 2915.8052};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West6";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West6,2] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item16
+		{
+            position[]={1141.9513, 0, 2935.0979};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West7";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West7,3] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item17
+		{
+            position[]={1124.7971, 0, 2942.0015};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West8";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West8,4] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item18
+		{
+            position[]={1107.2886, 0, 2935.7144};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West9";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West9,5] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item19
+		{
+            position[]={1107.6555, 0, 2920.9597};
+            a=2;
+            b=2;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            text="Basis_West";
+            name="Basis_West10";
+			expCond="(vehicle player) in thislist;";
+            expActiv="if (playerSide == WEST) then { skrypt = [Basis_West10,6] execVM ""custom\transport_system\warpzone.sqf""};";
+            expDesactiv="terminate skrypt; titleText [""You heve left the bunker!"", ""PLAIN DOWN"", 3];";
+            class Effects 
+            {
+            };
+        };
+		class Item20
+		{
+			position[]={16419.049,0, 4062.9302};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Revo";
+			expCond="(player distance Revo) < 100;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\safezone\clearzeds.sqf"";";
+            expDesactiv="canbuild = true; terminate clearzeds;";
 			class Effects
 			{
 			};
@@ -1511,8 +1769,8 @@ class Intro
 	randomSeed=6913869;
 	class Intel
 	{
-		startWeather=0.25;
-		forecastWeather=0.25;
+		startWeather=0.05;
+		forecastWeather=0.05;
 		year=2008;
 		month=10;
 		day=11;
@@ -1533,8 +1791,8 @@ class OutroWin
 	randomSeed=4081731;
 	class Intel
 	{
-		startWeather=0.25;
-		forecastWeather=0.25;
+		startWeather=0.05;
+		forecastWeather=0.05;
 		year=2008;
 		month=10;
 		day=11;
@@ -1555,8 +1813,8 @@ class OutroLoose
 	randomSeed=4975929;
 	class Intel
 	{
-		startWeather=0.25;
-		forecastWeather=0.25;
+		startWeather=0.05;
+		forecastWeather=0.05;
 		year=2008;
 		month=10;
 		day=11;

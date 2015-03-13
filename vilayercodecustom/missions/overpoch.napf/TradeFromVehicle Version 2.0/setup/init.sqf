@@ -16,7 +16,7 @@ TFV_DEBUG = false;  //Debug
 
 
 // This is in a * Multiplier to 100*1 = 100, 100*0.5 = 50, 100*0.75 = 75 25% Tax,100*0.25 = 25 75% Tax.
-TFV_TAX = true;
+TFV_TAX = false;
 TFV_TAXFV = 0.90; // Tax From Veichle 25%
 TFV_TAXFVT = "10"; // Dispay Tax Veichle (lazy code TBH)
 TFV_TAXFB= 0.95; // Tax From Backpack 15%
