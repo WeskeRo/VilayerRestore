@@ -511,6 +511,16 @@ if(_isModular) then {
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
+	
+	if (cursorTarget == LAPTOP) then {
+		_lap = cursorTarget;
+		if (s_player_nuke < 0) then {
+			s_player_nuke = player addAction [("<t color=""#FF0000"">" + ("Set Off Nuke") +"</t>"),"Nuke\nuke_On.sqf",_lap, 5, false, true, "",""];
+		};
+	} else {
+		player removeAction s_player_nuke;
+		s_player_nuke = -1;
+	};
 
 	// logic vars
 	_player_cook = false;
@@ -1018,6 +1028,10 @@ if(_isModular) then {
 	s_player_warndog = -1;
 	player removeAction s_player_followdog;
 	s_player_followdog = -1;
+	//NUKE
+	player removeAction s_player_nuke;
+	s_player_nuke = -1;
+	
 	
 	// DoorManagement
 	player removeAction s_player_manageDoor;
