@@ -17,7 +17,7 @@ switch (_rndSel) do
 TTLaptopOn = true; //Leave true for now
 TTLapPos = [1433.42, 3731.16, 10.572]; //(x,y,z)
 TTLapDir = -588.9624; // set the direction the laptop is facing here
-TTLapTyp = "Laptop_EP1"; // You can edit it to be anything you like
+TTLapTyp = "Land_CncBlock_Stripes"; // You can edit it to be anything you like
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Set the skins that will block blood loss in the radiation zone----------------------------------
 TTAntiR = ["BanditW1_DZ","BanditW2_DZ","Bandit2_DZ","GUE_Soldier_MG_DZ","INS_Lopotev_DZ"];
