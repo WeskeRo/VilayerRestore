@@ -121,7 +121,6 @@ private ["_aiunit","_aiGroup","_missionIndex","_locationPos","_locationRadius","
 		_aiunit addWeapon "NVGoggles";
 
 		_aiunit assignAsGunner _helicopter;
-		_aiunit moveInTurret [_helicopter,[_i]];
 		_aiunit moveInGunner _helicopter;
 		_aiunit setVariable ["ZEVMissionIndex", _missionIndex];
 		_aiunit setVariable ["ZEVMissionStatic", _static];
@@ -136,7 +135,7 @@ private ["_aiunit","_aiGroup","_missionIndex","_locationPos","_locationRadius","
 	
 	{_x doMove [(_dropPos select 0), (_dropPos select 1), 100]} forEach (units _aiGroup);	
 	
-	
+	[_helicopter] spawn ZEVMissionVehicleRearm;	
 	
 	_drop = True;
 

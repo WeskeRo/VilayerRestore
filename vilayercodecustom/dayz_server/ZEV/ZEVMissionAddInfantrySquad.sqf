@@ -56,6 +56,11 @@ private [
 	for [{ x=1 },{ x < _aiSquadQty+1 },{ x = x + 1; }] do
     {
 		_aiunit = [_aiGroup,_AIData] call ZEVMissionAddAIUnit;
+		if (x == 1) then
+		{
+			_aiGroup selectLeader _aiunit;
+		};
+		sleep 0.1;
     };
 	[_aiGroup, _routeData, _missionIndex] call ZEVMissionAddWayPoints;
 	

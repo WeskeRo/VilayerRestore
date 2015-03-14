@@ -16,13 +16,17 @@ private [
 "_aiSkillsValueType","_aiSkills","_locationPos","_locationRadius","_aiGroup","_aiunit","_aiweapon","_aimags","_aiweaponSec","_aimagsSec",
 "_missionIndex","_magsName","_magazine","_aibackpackName","_aibackpackItems","_aiGroupSkills","_aiGroupSkillsValueType","_aiLoot","_missionParms",
 "_static","_clearBody","_deleteLaunchers","_aiRandomName","_aibpRandomList","_aiWeaponRandomList","_deleteNVGoogle","_humanityGain","_headshots",
-"_cashmoney"];
+"_cashmoney","_absolutePos"];
 
     _aiunit = objNull;
 
 	_aiGroup		= _this select 0;
 	_aiData			= _this select 1;
-	
+	_absolutePos 	= false;
+	if(count _this == 3) then
+	{
+		_absolutePos = _this select 2;
+	};
 	_missionIndex	= _aiGroup getVariable "ZEVMissionIndex";
 	_static 		= _aiGroup getVariable "ZEVMissionStatic";
 	_missionParms 	= [_missionIndex, _static] call ZEVMissionGetActiveMissionParms;//[_locationPos, _locationRadius, _locationTriggerRadius]];	
@@ -56,11 +60,18 @@ private [
 	
 	if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - AddUnit:  selected skin %1", 	_aiName]; };
 	
-	_aiPos = [_aiPos, _aiPosType, _locationPos, _locationRadius] call ZEVMissionSelectPos;
+	if (_absolutePos) then
+	{
+		_aiPos = _aiPos;
+	}
+	else
+	{
+		_aiPos = [_aiPos, _aiPosType, _locationPos, _locationRadius] call ZEVMissionSelectPos;
+	};
 
 	_aiName createUnit [_aiPos, _aiGroup, "_aiunit=this;",1,"PRIVATE"];
 	
-	[_aiunit] joinSilent _aiGroup; // !!!!!!!!!!!!
+	[_aiunit] joinSilent _aiGroup; 
 	
 	if(ZEVMissionDebug > 1) then { diag_log format ["ZEVMission - AddAIUnit: Creating AI unit by %1 at %2. Result:%3 | Weapon:%4, Gear:%5, Backpack: %6",player,_aiPos,_aiunit,_aiweaponAndMag,_aigear,_aibackpack]; };
 
@@ -112,6 +123,8 @@ private [
 	_aiunit addweapon _aiweapon;
 	for "_i" from 1 to _aimags do {_aiunit addMagazine _magazine;};
 	_aiunit removeWeapon "ItemRadio","NVGoggles";
+	_aiunit setVariable ["ZEVMissionWeapon",_aiweapon, true];
+	_aiunit setVariable ["ZEVMissionMagazine",_magazine, true];
 
 	_aibackpackName		= _aibackpack select 0;
 	_aibackpackItems	= _aibackpack select 1;
@@ -167,6 +180,26 @@ private [
 			};
 		};
 	};
+	_aiweapon = _aiunit getVariable["ZEVMissionWeapon", ""];
+/*	
+	if ( _aiweapon != "") then
+	{
+		[_aiunit] spawn { 
+			private ["_ai","_w","_m"];
+			_ai = _this select 0;
+			_w  = _ai getVariable "ZEVMissionWeapon";
+			_m  = _ai getVariable "ZEVMissionMagazine";
+			while {alive _ai} do
+			{
+				if( (_ai ammo _w) < 1) then
+				{
+					_ai addMagazine [_m, 1];
+				};
+				sleep 20;
+			};
+		};
+	};
+*/	
 	if(random(1) <= ZEVMissionThrowSmokeShellChance) then
 	{
 		if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - AddUnit:  spawn ZEVMissionThrowSmokeShell for %1", _aiunit]; };

@@ -15,7 +15,7 @@ private ["_route","_AIData","_aiGroupType","_aiFormation","_aiSide",
 "_aIParmsQty","_groupData","_locationRadius","_locationPos","_missionIndex","_missionName",
 "_aiunit","_aiGroup","_aiVehicle","_gunnerSpots","_VehiclePermanent","_aivehicleData","_vehicleName","_vehiclePosType","_vehiclePos",
 "_VehicleAzimut","_VehicleLocked","_VehicleWLoot","_VehicleMLoot","_vehicleLootType","_vehicleLootItemsQty","_vehicleLootItems","_spawnDelay",
-"_crews", "_crew","_aiUnitData","_vehicleData","_first","_static"];
+"_crews", "_crew","_aiUnitData","_vehicleData","_first","_static","_h"];
  
     _aiunit = objNull;
 	
@@ -68,31 +68,17 @@ private ["_route","_AIData","_aiGroupType","_aiFormation","_aiSide",
 		
 		[_aiVehicle, "Convoy", _missionIndex, 25, _static, "ColorRed"] spawn ZEVMissionAddUnitMarker;
 		
-		if(_first) then
-		{
-			_first = false;
-			[_aiVehicle, _missionIndex, _static] spawn 
-			{
-				private["_veh","_idx","_parms","_pos", "_markerStatus","_stat"];
-				_veh = _this select 0;
-				_idx = _this select 1;
-				_stat= _this select 2;
-				_markerStatus = [_idx, _stat] call ZEVMissionGetMarkerStatus;
-				while { (alive _veh) && (_markerStatus > 0)} do
-				{
-					_parms = [_idx, _stat] call ZEVMissionGetActiveMissionParms;//[_locationPos, _locationRadius, _locationTriggerRadius]];					
-					_pos 	= getPos _veh;
-					_parms set [0, _pos];
-					[_idx, _stat, _parms] call ZEVMissionSetActiveMissionParms;
-					_markerStatus = [_idx, _stat] call ZEVMissionGetMarkerStatus;
-					sleep 10;
-				};
-			};
-		};
-		
 		_aiunit		= [_aiGroup, _AIData] call ZEVMissionAddAIUnit;
 		_aiunit assignAsDriver _aiVehicle;
 		_aiunit moveInDriver _aiVehicle;
+		_aiunit setSkill 1;
+		/*
+		if ( _aiVehicle isKindOf "Car" ) then
+		{
+			[_aiVehicle, _aiunit] spawn ZEVMissionAutoRepair;
+		};
+		*/
+		if(ZEVMissionDebug > 0) then { diag_log format ["ZEVMission: add gunners %1",1]; };
 //---------------------------------gunners--------------------------
 		_gunnerSpots = _aiVehicle emptyPositions "gunner";
 		_aiVehicle setVariable ["Pilot", _aiunit];
@@ -103,6 +89,7 @@ private ["_route","_AIData","_aiGroupType","_aiFormation","_aiSide",
 			_aiunit moveInGunner _aiVehicle;
 			sleep 0.1;
 		};
+		if(ZEVMissionDebug > 0) then { diag_log format ["ZEVMission: add cargo units %1",1]; };
 //---------------------------------CargoUnits--------------------------
 		_gunnerSpots = _aiVehicle emptyPositions "cargo";
 		
@@ -125,5 +112,25 @@ private ["_route","_AIData","_aiGroupType","_aiFormation","_aiSide",
 		[_aivehicle] spawn ZEVMissionVehicleRearm;
 	} foreach _crews;
 	
-	if(ZEVMissionDebug > 1) then { diag_log format ["ZEVMission: add route %1",1]; };
-	[_aiGroup, _route, _missionIndex] spawn ZEVMissionAddWayPoints;
+	if(ZEVMissionDebug > 0) then { diag_log format ["ZEVMission: add route %1",1]; };
+	diag_log format ["ZEVMission: add route %1",1];
+	[_aiGroup, _route, _missionIndex] call ZEVMissionAddWayPoints;
+	diag_log format ["ZEVMission: add after route %1",1];
+	[_aiVehicle, _missionIndex, _static] spawn 
+	{
+		private ["_veh","_idx","_parms","_pos", "_markerStatus","_stat"];
+		_veh = _this select 0;
+		_idx = _this select 1;
+		_stat= _this select 2;
+		_markerStatus = [_idx, _stat] call ZEVMissionGetMarkerStatus;
+		while { (alive _veh) && (_markerStatus > 0)} do
+		{
+			_parms = [_idx, _stat] call ZEVMissionGetActiveMissionParms;//[_locationPos, _locationRadius, _locationTriggerRadius]];					
+			_pos 	= getPos _veh;
+			_parms set [0, _pos];
+			[_idx, _stat, _parms] call ZEVMissionSetActiveMissionParms;
+			_markerStatus = [_idx, _stat] call ZEVMissionGetMarkerStatus;
+			sleep 10;
+		};
+	};
+

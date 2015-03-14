@@ -41,11 +41,13 @@ if ((count _vehWeapons) > 0) then
 			if ((_vehicle ammo _x) < 1) then 
 			{
 				_magsName = getArray (configFile >> "cfgWeapons" >> _x >> "magazines");
-				_magazine = _magsName select 0;
-				_vehicle addMagazine [_magazine, 1];
-				_vehicle addMagazineCargoGlobal [_magazine, 1];
-				_vehicle setVehicleAmmo 1;
-			
+				if(count _magsName > 0) then
+				{
+					_magazine = _magsName select 0;
+					_vehicle addMagazine [_magazine, 1];
+					_vehicle addMagazineCargoGlobal [_magazine, 1];
+					_vehicle setVehicleAmmo 1;
+				};
 			};
 		} forEach _vehWeapons;
 		

@@ -45,6 +45,7 @@ while {true} do
 	} foreach _ZEVMissionInProgress;
 	
 	if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionLoop(Static = %2): running missions count = %1 ", _missionRunning, _static]; };
+	if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionLoop(Static = %2): running missions count = %1 ", _missionRunning, _static]; };
 	
 	if(_missionRunning < _missionCountAtSameTime) then // если запущено миссий мало
 	{
@@ -57,6 +58,7 @@ while {true} do
 		};
 		
 		if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionLoop(Static = %2): try to start mission %1 ", _mission2Run, _static]; };
+		if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionLoop(Static = %2): try to start mission %1 ", _mission2Run, _static]; };
 		_ZEVMissionInProgress = [_static] call ZEVMissionGetMissionInProgress; 
 		_missionRunStatus =  _ZEVMissionInProgress select _mission2Run;
 		
@@ -65,7 +67,8 @@ while {true} do
 		_curTime	      = time;
 		
 		if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionLoop: mission=%1, lastFinishTime=%2, curtime = %3", _mission2Run, _lastFinishTime, _curTime]; };
-
+		if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionLoop: mission=%1, lastFinishTime=%2, curtime = %3", _mission2Run, _lastFinishTime, _curTime]; };
+		
 		if(_curTime - _lastFinishTime < ZEVMissionCooldownTime) then
 		{
 			_missionRunStatus = 1;
@@ -84,7 +87,7 @@ while {true} do
 
 			_lastFinishTime	  = [_mission2Run, _static] call ZEVMissionGetMissionLastFinishTime;
 			_curTime = time;
-			
+			if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionLoop: mission=%1, lastFinishTime=%2, curtime = %3", _mission2Run, _lastFinishTime, _curTime]; };
 			if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionLoop: mission=%1, lastFinishTime=%2, curtime = %3", _mission2Run, _lastFinishTime, _curTime]; };
 			
 			if(_curTime - _lastFinishTime < ZEVMissionCooldownTime) then

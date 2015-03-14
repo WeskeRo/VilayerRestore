@@ -25,4 +25,5 @@ if(_aiPosType == "Random") then
 	_z = 0;
 	_aiPos	= [_x, _y, _z];
 };
+if(ZEVMissionDebug > 0) then { diag_log format ["ZEVMissionSelectPos: %1", _aiPos];};
 _aiPos

@@ -75,7 +75,7 @@ if(_deleteNVGoogle == "Yes") then
 	};
 } forEach allUnits;
 	
-sleep 1200;
+sleep ZEVMissionCorpseCleanupTime;
 
 deletevehicle _ai;
 

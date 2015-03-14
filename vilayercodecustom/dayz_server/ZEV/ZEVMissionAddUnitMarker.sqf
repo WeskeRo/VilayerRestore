@@ -11,20 +11,25 @@
 //  YouTube : http://www.youtube.com/channel/UCWuzUxNJ_Ctf9ynoJqiV2ww
 //
 //-----------------------------------------------------------//
-private ["_object", "_dot","_position","_Marker","_name","_missionIndex", "_size","_isMissionRunning","_markerName","_markerDotName"];
+private ["_object", "_dot","_position","_Marker","_name","_missionIndex", "_size","_isMissionRunning","_markerName","_markerDotName","_static"];
 
+
+if(ZEVMissionDebug > 1) then { diag_log format ["ZEVMission: addunitMarker _this = %1", _this]; };
 
 _object 		= _this select 0;
 _name 			= _this select 1;
 _missionIndex 	= _this select 2;
 _size 			= _this select 3;
+_static			= _this select 4;
 _Marker 		= "";
 _dot 			= "";
 
-_isMissionRunning = ZEVMissionMarkerStatus select _missionIndex;
+_isMissionRunning = [_missionIndex, _static] call ZEVMissionGetMarkerStatus;
 
-_markerName		= format["Mission_%1_%2_%3", _missionIndex, name _object, floor(random(999))];
-_markerDotName  = format["MissionDOT_%1_%2_%3", _missionIndex, name _object, floor(random(999))];
+if(ZEVMissionDebug > 1) then { diag_log format ["ZEVMission: addunitMarker _this = %1", _this]; };
+
+_markerName		= format["Mission_%1_%2_%3", _missionIndex, name _object, time];
+_markerDotName  = format["MissionDOT_%1_%2_%3", _missionIndex, name _object, time];
 while { (_isMissionRunning > 0) and (alive _object)} do 
 {
 	_position		= getPos _object;
@@ -41,7 +46,7 @@ while { (_isMissionRunning > 0) and (alive _object)} do
 	sleep 5;
 	deleteMarker _Marker;
 	deleteMarker _dot;
-	_isMissionRunning = ZEVMissionMarkerStatus select _missionIndex;
+	_isMissionRunning = [_missionIndex, _static] call ZEVMissionGetMarkerStatus;
 };
 
 deleteMarker _Marker;
