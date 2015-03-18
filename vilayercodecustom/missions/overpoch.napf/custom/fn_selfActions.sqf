@@ -271,33 +271,33 @@ if(_isModular) then {
             };                                        
         };
 };
-		//Allow owners to delete modular doors without locks
-		if(_isModularDoor) then {
-				if(_hasToolbox && "ItemCrowbar" in _itemsPlayer) then {         
-					_findNearestPoles = nearestObjects[player, ["Plastic_Pole_EP1_DZ"], DZE_PlotPole select 0];
-					_IsNearPlot = count (_findNearestPoles);
-					_fuid  = [];
-					_allowed = [];
-					if(_IsNearPlot > 0)then{
-						_thePlot = _findNearestPoles select 0;
-						_owner =  _thePlot getVariable ["ownerPUID","010"];
-						_friends = _thePlot getVariable ["plotfriends", []];
-						{
-						  _friendUID = _x select 0;
-						  _fuid  =  _fuid  + [_friendUID];
-						} forEach _friends;
-						_allowed = [_owner];    
-						_allowed = [_owner] +  _fuid;   
-						if ( _playerUID in _allowed && _ownerID in _allowed) then { //  // If u want that the object also belongs to someone on the plotpole.
-							_player_deleteBuild = true;
-						};                  
-					}else{
-						if(_ownerID == _playerUID)then{
-							_player_deleteBuild = true;
-						};
-					};                              
-				};      
-		};
+//Allow owners to delete modular doors without locks
+if(_isModularDoor) then {
+        if(_hasToolbox && "ItemCrowbar" in _itemsPlayer) then {         
+            _findNearestPoles = nearestObjects[player, ["Plastic_Pole_EP1_DZ"], DZE_PlotPole select 0];
+            _IsNearPlot = count (_findNearestPoles);
+            _fuid  = [];
+            _allowed = [];
+            if(_IsNearPlot > 0)then{
+                _thePlot = _findNearestPoles select 0;
+                _owner =  _thePlot getVariable ["ownerPUID","010"];
+                _friends = _thePlot getVariable ["plotfriends", []];
+                {
+                  _friendUID = _x select 0;
+                  _fuid  =  _fuid  + [_friendUID];
+                } forEach _friends;
+                _allowed = [_owner];    
+                _allowed = [_owner] +  _fuid;   
+                if ( _playerUID in _allowed && _ownerID in _allowed) then { //  // If u want that the object also belongs to someone on the plotpole.
+                    _player_deleteBuild = true;
+                };                  
+            }else{
+                if(_ownerID == _playerUID)then{
+                    _player_deleteBuild = true;
+                };
+            };                              
+        };      
+};
 		
 		// CURSOR TARGET VEHICLE
 		if(_isVehicle) then {
@@ -510,6 +510,16 @@ if(_isModular) then {
 	} else {
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
+	};
+	
+	if (cursorTarget == LAPTOP) then {
+		_lap = cursorTarget;
+		if (s_player_nuke < 0) then {
+			s_player_nuke = player addAction [("<t color=""#FF0000"">" + ("Set Off Nuke") +"</t>"),"Nuke\nuke_On.sqf",_lap, 5, false, true, "",""];
+		};
+	} else {
+		player removeAction s_player_nuke;
+		s_player_nuke = -1;
 	};
 
 	// logic vars
@@ -1018,6 +1028,10 @@ if(_isModular) then {
 	s_player_warndog = -1;
 	player removeAction s_player_followdog;
 	s_player_followdog = -1;
+	//NUKE
+	player removeAction s_player_nuke;
+	s_player_nuke = -1;
+	
 	
 	// DoorManagement
 	player removeAction s_player_manageDoor;

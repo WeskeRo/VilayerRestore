@@ -44,6 +44,7 @@ private [
 			_wp setWaypointBehaviour "SAFE";
 			_wp setWaypointCombatMode "YELLOW";
 			_wp setWaypointTimeout [0.01,0.02,0.03];
+			sleep 0.1;
 		};
 		_angle	= 360;
 		_xx		= (_locationPos select 0) +(_locationRadius * cos _angle);
@@ -90,7 +91,8 @@ private [
 					_yy = (_locationPos select 1) + (_wpRadius * (sin _angle));
 					_wpPos = [_xx,_yy, 0];
 				};
-				_wp = _aiGroup addWaypoint [_wppos, 5];
+				_wp = _aiGroup addWaypoint [_wppos, 3];
+				_wp setWaypointPosition [_wppos, 3];
 				_wp setWaypointType _wpType;
 				_wp setWaypointSpeed _speed;
 				_wp setWaypointBehaviour _behaviour;
@@ -98,7 +100,17 @@ private [
 				_wp setWaypointCompletionRadius _completionRadius;
 				_wp setWaypointFormation _formation;
 				_wp setWaypointTimeout [_timeoutMin,_timeoutMid,_timeoutMax];
-				if(ZEVMissionDebug > 1) then { diag_log format["ZEVMission: waypoint added: %1, %2, %3, %4", _aiGroup,_wpPosType,_wpPos,waypointType _wp]; };
+				
+				if(ZEVMissionDebug > 0) then { diag_log format["ZEVMission: waypoint added: %1, %2, %3, %4", _aiGroup,_wpPosType,_wpPos,waypointType _wp]; };
+				
+				if(ZEVMissionDebug > 0) then 
+				{
+					_wppos = waypointPosition _wp;
+					_m = createMarker [format ["m_%1_%2",_wppos, time],_wppos];
+					_m setMarkerShape "ICON";
+					_m setMarkerType "mil_dot";
+				};
+				sleep 0.1;
 			
 			}foreach _waypoints;
 		};

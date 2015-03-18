@@ -122,8 +122,9 @@ if (true) then
   _this setPos [16100.134, 18759.68, 0.12001707];
 };
 
-
+/*
 // IKEA 1
+
 _vehicle_396 = objNull;
 if (true) then
 {
@@ -242,7 +243,7 @@ if (true) then
   _this setPos [5607.0659, 2362.8831, 0];
 };
 
-
+*/
 
 
 

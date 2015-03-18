@@ -96,6 +96,7 @@
 	_vehicleList2		= [];
 
 		if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  somebody in trigger zone , create all mission stuff at %1", _locationPos, _static]; };
+		if(ZEVMissionDebug ==-1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  somebody in trigger zone , create all mission stuff at %1", _locationPos, _static]; };
 		
 		_vehiclesQty		= 0;
 		_vehiclesQty		= _vehiclesData select 0;
@@ -213,6 +214,7 @@
 				_playerInTrigger = [_locationPos, _locationTriggerRadius] call ZEVMissionIsPlayerInRange;
 			};
 			if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionMonitor _playerInTrigger=%1", _playerInTrigger]; };
+			if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionMonitor _playerInTrigger=%1", _playerInTrigger]; };
 
 			_currentTime = floor(time);
 			
@@ -235,10 +237,12 @@
 				_allUnitsDead = false;
 			};
 			if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionMonitor (_playerCome) or (_cleanMission) or(_allUnitsDead)=%1", (_playerCome) or (_cleanMission) or(_allUnitsDead)]; };
+			if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionMonitor (_playerCome) or (_cleanMission) or(_allUnitsDead)=%1", (_playerCome) or (_cleanMission) or(_allUnitsDead)]; };
 			((_playerCome) or (_cleanMission) or(_allUnitsDead))
 		};
 		
 		if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  condition of end mission %1 is equal TRUE ", _missionName, _static]; };
+		if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  condition of end mission %1 is equal TRUE ", _missionName, _static]; };
 		
 		
 		[_missionIndex, _static, 0] call ZEVMissionSetMarkerStatus;
@@ -247,12 +251,14 @@
 		{
 			//diag_log format["ZEVMission: Mission %1 Timed Out At %2",_missionName, _locationPos];
 			[nil,nil,rTitleText,_missionFailMessage, "PLAIN",10] call RE;
+			//ZEVMissionHintRed = _missionFailMessage; publicVariable "ZEVMissionHintRed";
 
 		}
 		else
 		{
 			//diag_log format["ZEVMission: Mission %1 Ended At %2",_missionName, _locationPos];
 			[nil,nil,rTitleText,_missionEndMessage, "PLAIN",10] call RE;
+			//ZEVMissionHint = _missionEndMessage; publicVariable "ZEVMissionHint";
 		};
 
 		_loop1 = 0;
@@ -261,10 +267,12 @@
 
 	if(!_cleanMission)	then
 	{
+		if(ZEVMissionDebug == -1) then { diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2): wait for %1 sec before clean objects", ZEVMissionFinishedMissionCleanupDelay, _static];};
 		if(ZEVMissionDebug > 1) then { diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2): wait for %1 sec before clean objects", ZEVMissionFinishedMissionCleanupDelay, _static];};
 		sleep ZEVMissionFinishedMissionCleanupDelay;
 	};
 
+	if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionMonitor:  cleanup mission %1", _missionName]; };
 	if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor:  cleanup mission %1", _missionName]; };
 	if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor:  _cleanMission  = %1 ", _cleanMission ]; };
 	if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor:  _allUnitsDead = %1 ", _allUnitsDead ]; };
@@ -288,8 +296,10 @@
 		
 		if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  _vehicleList = %1 ", _vehicleList , _static]; };
 		{
-			if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  analyzing vehicle %1 to delete...", _vehicle,_static]; };
+			
 			_vehicle = _x;
+			
+			if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  analyzing vehicle %1 to delete...", _vehicle,_static]; };
 			
 			_vehiclePermanent = _vehicle getVariable ["ZEVPermanent", "No"];
 			if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  _vehiclePermanent = %1", _vehiclePermanent, _static]; };
@@ -308,17 +318,12 @@
 				else
 				{
 					//если машинка и не сохраняем в базу то
-					// удаляем если рядом(в радиусе 400м) нет игроков
-					if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  analyzing is player in 400 m range", _vehiclePermanent,_static]; };
-					
-					if(({(isPlayer _x) && (_x distance _vehicle < 400)} count allUnits) < 1) then
+					// удаляем если рядом(в радиусе 100м) нет игроков
+					if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  analyzing is player in 100 m range", _vehiclePermanent,_static]; };
+					_vehicle spawn 
 					{
-						if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  no players near vehicle - delete vehicle", _vehiclePermanent, _static]; };
-						deleteVehicle _vehicle;
-					}
-					else
-					{
-						if(ZEVMissionDebug > 1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %2):  several players near vehicle, dont delete vehicle(till restart)", _vehiclePermanent, _static]; };
+						waitUntil {sleep 60; ({(isPlayer _x) && (_x distance _this < 100)} count allUnits) < 1};
+						deleteVehicle _this;
 					};
 				};
 			};
@@ -328,11 +333,13 @@
 	[_missionIndex, _static, []] call ZEVMissionSetVehicleList;
 	
 	sleep ZEVMissionPostDelay;
+	if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %1): setup ZEVMissionSetMissionInProgress", _static]; };
 	if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %1): setup ZEVMissionSetMissionInProgress", _static]; };
 	[_missionIndex, _static, 0]    call ZEVMissionSetMissionInProgress;
 
 	if(_static == 0) then
 	{
+		if(ZEVMissionDebug == -1) then {diag_log format["ZEVMission - ZEVMissionMonitor(Static = %1): set mission finish time as %2", _static, time]; };		
 		[_missionIndex, _static, time] call ZEVMissionSetMissionLastFinishTime;
 	};
 	if(_static == 1) then

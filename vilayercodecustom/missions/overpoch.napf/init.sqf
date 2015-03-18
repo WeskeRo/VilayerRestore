@@ -74,6 +74,7 @@ progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
 call compile preprocessFileLineNumbers "custom\compiles.sqf";
 call compile preprocessFileLineNumbers "logistic\init.sqf";	
+call compile preprocessFileLineNumbers "Nuke\Settings.sqf";
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
@@ -85,6 +86,7 @@ if (isServer) then {
 	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
 
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	[] execVM "Nuke\server_Nuke.sqf"; 
 };
 
 if (!isDedicated) then {
@@ -104,7 +106,7 @@ if (!isDedicated) then {
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	[] execVM "dzgm\init.sqf";
-	
+	[] execVM "Nuke\Effects\effects.sqf";
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";

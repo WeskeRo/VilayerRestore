@@ -122,6 +122,8 @@ if (!isDedicated) then {
 	player_updateGui =			compile preprocessFileLineNumbers "custom\player_updateGui.sqf";
 	player_selectSlot =			compile preprocessFileLineNumbers "custom\ui_selectSlot.sqf";
 /*Custom GUI END*/	
+fnc_usec_damageVehicle =        compile preprocessFileLineNumbers "custom\zupa\fn_damageHandlerVehicle.sqf";        //Event handler run on damage
+vehicle_handleDamage =          compile preprocessFileLineNumbers "custom\zupa\vehicle_handleDamage.sqf";
 	
 /*Single Coin Currency*/	
 	call compile preprocessFileLineNumbers "gold\player_traderMenu.sqf";

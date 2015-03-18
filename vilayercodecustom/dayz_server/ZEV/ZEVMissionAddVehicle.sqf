@@ -14,12 +14,16 @@
    private ["_missionIndex","_missionParms","_vehicleName",	"_vehiclePosType","_vehiclePos","_vehicleAzimut","_vehicle","_vehicleLootType",
 			"_vehicleLootItems","_vehicleLocked","_vehicleWeaponLoot","_vehicleMagazineLoot","_locationRadius","_locationPos","_vehicleLootItemsQty",
 			"_vehiclePermanent","_vehicleData","_vehicleList","_gunnerSpots","_static","_ZEVVehicleRandomList","_vehicleRandomList",
-			"_damageMin","_damageMax","_fuelMin","_fuelMax"];
+			"_damageMin","_damageMax","_fuelMin","_fuelMax","_absolutePos"];
 
 	_missionIndex 		= _this select 0;
 	_vehicleData		= _this select 1;
 	_static				= _this select 2;
-	
+	_absolutePos		= false;
+	if(count _this == 4) then
+	{
+		_absolutePos 	= _this select 3;
+	};
 	_missionParms		= [_missionIndex, _static] call ZEVMissionGetActiveMissionParms;
 	
 	_locationPos		= _missionParms select 0;
@@ -39,13 +43,13 @@
 	_fuelMin			= _vehicleData select 11;
 	_fuelMax			= _vehicleData select 12;
 	
-	if (_damageMin < 20) then { _damageMin = 20;};
-	if (_damageMax > 80) then { _damageMax = 80;};
-	if (_damageMin > _damageMax) then { _damageMin = _damageMax;};
+	if (_damageMin < 20) 			then { _damageMin = 20;};
+	if (_damageMax > 80) 			then { _damageMax = 80;};
+	if (_damageMin > _damageMax)	then { _damageMin = _damageMax;};
 		
-	if (_fuelMin < 0) then { _fuelMin = 0;};
-	if (_fuelMax > 100) then { _fuelMax = 100;};
-	if (_fuelMin > _fuelMax) then {_fuelMin = _fuelMax;};
+	if (_fuelMin < 0) 				then { _fuelMin = 0;};
+	if (_fuelMax > 100) 			then { _fuelMax = 100;};
+	if (_fuelMin > _fuelMax) 		then {_fuelMin = _fuelMax;};
 	
 	_damageMin 	= (_damageMin + random(_damageMax - _damageMin))/100;
 	
@@ -54,7 +58,14 @@
 	
 	_vehicleName = [_missionIndex, _vehicleName, _vehicleRandomList, ZEVVehicleList] call ZEVMissionSelect;
 	
-	_vehiclePos = [_vehiclePos, _vehiclePosType, _locationPos, _locationRadius] call ZEVMissionSelectPos;
+	if(_absolutePos) then
+	{
+		_vehiclePos = _vehiclePos;
+	} 
+	else
+	{
+		_vehiclePos = [_vehiclePos, _vehiclePosType, _locationPos, _locationRadius] call ZEVMissionSelectPos;
+	};
 	
 	if(_vehiclePosType == "Random") then
 	{
@@ -64,15 +75,27 @@
 	_vehicle 			= createVehicle [_vehicleName, _vehiclePos, [], 0, "CAN_COLLIDE"];
 	
 
+	_vehicle setPos _vehiclePos;
+	_vehicle setVectorUp surfaceNormal position _vehicle;	
 	_vehicle setDir _vehicleAzimut;
 	
-	//publicVariable "ZEVMissionVehicles";
+	if (_vehicle isKindOf "Car") then
+	{
+		_roads = _vehiclePos  nearRoads 20;
+		if(count _roads > 0) then
+		{
+			_vehiclePos = position (_roads select 0);
+			_vehicle setPosATL _vehiclePos;
+		};
+	};
 	
 	_vehicle setVariable ["ZEVPermanent", _vehiclePermanent, true];
 
 	
 	_vehicleList = [_missionIndex, _static] call ZEVMissionGetVehicleList;
+	
 	_vehicleList set [count _vehicleList, _vehicle]; 
+	
 	[_missionIndex, _static, _vehicleList] call ZEVMissionSetVehicleList;
 	
 	_vehicle setVariable ["ObjectID","1",true];
@@ -93,12 +116,7 @@
 	_vehicleLootItemsQty= _vehicleMagazineLoot select 1;
 	_vehicleLootItems	= _vehicleMagazineLoot select 2;
 	[_vehicle, "magazine", _vehicleLootType, _vehicleLootItemsQty, _vehicleLootItems, _static] call ZEVMissionVehicleAddLoot;
-/*	
-	if(random(1) > 0.8) then
-	{
-		_vehicle addBackpackCargoGlobal [ZEVBackPackList call BIS_fnc_selectRandom , 1];
-	};
-*/	
+
 /*
 	if(_VehiclePermanent == "No") then
 	{

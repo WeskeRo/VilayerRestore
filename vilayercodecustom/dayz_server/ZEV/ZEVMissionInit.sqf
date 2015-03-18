@@ -150,6 +150,8 @@ ZEVMissionGetBuildingRandomList			= compile preprocessFileLineNumbers "\z\addons
 ZEVMissionGetWeaponRandomList			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetWeaponRandomList.sqf";
 ZEVMissionGetGearRandomList				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetGearRandomList.sqf";
 ZEVMissionVehicleFindGunner				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleFindGunner.sqf";
+ZEVMissionAutoRepair					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAutoRepair.sqf";
+ZEVMissionGetHitPoints					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetHitPoints.sqf";
 sleep 60;
 diag_log "ZEVMission: run staic missions:";
 [1] spawn ZEVStaticMissionLoop;//Статичные

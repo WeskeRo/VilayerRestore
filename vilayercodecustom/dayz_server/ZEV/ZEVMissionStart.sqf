@@ -57,7 +57,8 @@ private ["_missionIndex",
 		"_loop2",
 		"_missionCountInRadius","_missionTimeLimit","_locationsData","_locationData",
 		"_locationPosType","_locationTriggerRadius","_locationRadius","_locationPos",
-		"_currentTime","_startCondition","_endCondition","_static","_showMissionMarker","_markerColor"];
+		"_currentTime","_startCondition","_endCondition","_static","_showMissionMarker","_markerColor",
+		"_positions","_posCount","_curPos","_posArray","_areaPos"];
 
 	
 if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission: starting script - ZEVMissionStart %1 ", ""]; };
@@ -121,16 +122,32 @@ _vehiclesData		= _locationData select 5;
 
 _AIGroupsData   	= _locationData select 6;
 
+_positions			= _locationData select 7;
+_posCount			= _positions select 0;
+_posArray			= _positions select 1; //[["postype",[x,y,z],radius]]
+if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionStart _positions = %1", _positions]; };
 
 if(_locationPosType == "Random") then
 {
-	if(ZEVMissionMapName == "Chernorus") then
+	if(_posCount > 0) then
 	{
-		_locationPos = [getMarkerPos "center",0,5500,10,0,2000,0] call BIS_fnc_findSafePos;
-	};
-	if(ZEVMissionMapName == "Napf") then
+		_areaPos		=	_posArray call BIS_fnc_selectRandom;
+		_areaPos		= _areaPos select 1;
+		if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionStart _areaPos = %1", _areaPos]; };
+		_areaPos = [_areaPos, "Specified", _locationPos, _locationRadius] call ZEVMissionSelectPos;
+		if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionStart _areaPos absolute = %1", _areaPos]; };
+		_locationPos 	= _areaPos;
+	}
+	else
 	{
-		_locationPos = [getMarkerPos "center",0,7000,10,0,2000,0] call BIS_fnc_findSafePos;
+		if(ZEVMissionMapName == "Chernorus") then
+		{
+			_locationPos = [getMarkerPos "center",0,5500,10,0,2000,0] call BIS_fnc_findSafePos;
+		};
+		if(ZEVMissionMapName == "Napf") then
+		{
+			_locationPos = [getMarkerPos "center",0,7000,10,0,2000,0] call BIS_fnc_findSafePos;
+		};
 	};
 };
 if(_missionTimeLimit == 0) then 
@@ -156,6 +173,7 @@ if(_showMissionMarker == "Yes") then
 if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionStart show mission start message: %1 ", _missionStartMessage]; };
 
 [nil,nil,rTitleText, _missionStartMessage, "PLAIN",10] call RE;
+//ZEVMissionHint = _missionStartMessage; publicVariable "ZEVMissionHint";
 
 _missionTimeOut = true;
 _cleanMission 	= false;
@@ -196,12 +214,12 @@ if(ZEVMissionDebug > 0) then {diag_log format["ZEVMission - ZEVMissionStart:  so
 
 if(_playerCome) then
 {
-	//[_missionIndex, _missionName, _missionEndMessage, _missionFailMessage, _missionTimeLimit, _locationRadius, _locationPos, _buildingsData, _vehiclesData, _AIGroupsData] spawn ZEVMissionMonitor;
-	_nul = [_missionIndex, _missionName, _missionEndMessage, _missionFailMessage, _missionTimeLimit, _locationRadius, _locationPos, _buildingsData, _vehiclesData, _AIGroupsData, _static] execVM "\z\addons\dayz_server\ZEV\ZEVMissionMonitor.sqf";
+	[_missionIndex, _missionName, _missionEndMessage, _missionFailMessage, _missionTimeLimit, _locationRadius, _locationPos, _buildingsData, _vehiclesData, _AIGroupsData, _static] spawn ZEVMissionMonitor;
 }
 else
 {
 	[nil,nil,rTitleText, _missionFailMessage, "PLAIN",10] call RE;
+	//ZEVMissionHintRed = _missionFailMessage; publicVariable "ZEVMissionHintRed";
 	[_missionIndex, _static ,0] call ZEVMissionSetMissionInProgress;
 	[_missionIndex, _static ,0] call ZEVMissionSetMarkerStatus;
 };

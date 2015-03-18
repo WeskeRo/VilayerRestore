@@ -63,32 +63,50 @@ class CfgSounds
 {
     sounds[] =
     {
-    introSong, dance1, dance2, dance3
+		introSong, dance1, dance2, dance3, nam,eve,puk
     };
     class introSong
     {
-    name="introSong";
-    sound[]={custom\startup\introSong.ogg,0.9,1};
-    titles[] = {};
+		name="introSong";
+		sound[]={custom\startup\introSong.ogg,0.9,1};
+		titles[] = {};
     };
 	class dance1
     {
-    name="dance1";
-    sound[]={custom\Actionmenu\Fun\dance1.ogg,0.9,1};
-    titles[] = {};
+		name="dance1";
+		sound[]={custom\Actionmenu\Fun\dance1.ogg,0.9,1};
+		titles[] = {};
     };
 	class dance2
     {
-    name="dance2";
-    sound[]={custom\Actionmenu\Fun\dance2.ogg,0.9,1};
-    titles[] = {};
+		name="dance2";
+		sound[]={custom\Actionmenu\Fun\dance2.ogg,0.9,1};
+		titles[] = {};
     };
 	class dance3
     {
-    name="dance3";
-    sound[]={custom\ActionMenu\fun\dance3.ogg,0.9,1};
-    titles[] = {};
+		name="dance3";
+		sound[]={custom\ActionMenu\fun\dance3.ogg,0.9,1};
+		titles[] = {};
     };
+	class nam
+	{	
+		name = "Siren1";
+		sound[] = {Nuke\sound\SirenLoopMono.ogg, db+20, 1.0};
+		titles[] = {""};
+	};
+	class eve
+	{
+		name = "Siren2";
+		sound[] = {Nuke\sound\Sirens.ogg, db+20, 1.0};
+		titles[] = {""};
+	};
+	class puk
+	{
+		name = "Siren3";
+		sound[] = {Nuke\sound\Sirens2.ogg, db+20, 1.0};
+		titles[] = {""};
+	};
 };
 class RscLoadingText : RscText
 {

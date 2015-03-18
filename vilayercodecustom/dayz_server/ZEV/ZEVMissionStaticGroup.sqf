@@ -46,10 +46,11 @@ private ["_aiPos","_AIData","_aiGroupType","_aiFormation","_aiSide",
 	
 	_aiunit = [_aiGroup, _AIData] call ZEVMissionAddAIUnit;
 	_aiPos = _aiunit getVariable ["ZEVMissionInitialPos", getPos _aiunit];
+	_azimut= _aiunit getVariable ["ZEVMissionInitialDir", getDir _aiunit];
 	//_aiPos = getPos _aiunit;
 	_staticGun = createVehicle [_staticGunName, _aiPos, [], 0, "CAN_COLLIDE"]; 
 	//_staticGun setDir round(random 360);
-	_staticGun setDir (getDir _aiunit);
+	_staticGun setDir _azimut;
 	_staticGun setPos _aiPos;
 
 	_staticGun addEventHandler ["GetOut",{(_this select 0) setDamage 1;}];
@@ -63,6 +64,13 @@ private ["_aiPos","_AIData","_aiGroupType","_aiFormation","_aiSide",
 	_staticGun setVariable ["ZEVMissionGunner", _aiunit];
 	
 	//[_staticGun, _static, _missionIndex] spawn ZEVMissionVehicleFindGunner;
+
+	_staticGun addEventHandler ["GetIn",{
+		if (isPlayer (_this select 2)) then 
+		{
+			(_this select 2) action ["getOut",(_this select 0)]; 
+		};
+	}];
 	
 	[_staticGun, _static, _missionIndex] spawn {
 		if (!isServer) exitWith {};
