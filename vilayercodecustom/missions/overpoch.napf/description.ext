@@ -91,19 +91,19 @@ class CfgSounds
     };
 	class nam
 	{	
-		name = "Siren1";
+		name = "nam";
 		sound[] = {Nuke\sound\SirenLoopMono.ogg, db+20, 1.0};
 		titles[] = {""};
 	};
 	class eve
 	{
-		name = "Siren2";
+		name = "eve";
 		sound[] = {Nuke\sound\Sirens.ogg, db+20, 1.0};
 		titles[] = {""};
 	};
 	class puk
 	{
-		name = "Siren3";
+		name = "puk";
 		sound[] = {Nuke\sound\Sirens2.ogg, db+20, 1.0};
 		titles[] = {""};
 	};

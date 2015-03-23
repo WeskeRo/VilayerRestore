@@ -991,7 +991,7 @@ execVM "\z\addons\dayz_server\map\revo_trader.sqf";
 //execVM "\z\addons\dayz_server\map\misja_ikea.sqf";
 //execVM "\z\addons\dayz_server\map\cave.sqf";
 
-//execVM "\z\addons\dayz_server\map\insel.sqf";
+execVM "\z\addons\dayz_server\map\insel.sqf";
 execVM "\z\addons\dayz_server\map\brucke.sqf";
 execVM "\z\addons\dayz_server\map\crates.sqf";
 execVM "\z\addons\dayz_server\init\broadcaster.sqf";

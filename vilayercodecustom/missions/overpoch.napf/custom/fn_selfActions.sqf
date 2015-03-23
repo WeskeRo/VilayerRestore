@@ -842,6 +842,20 @@ if(_isModularDoor) then {
 		s_player_sleep = -1;
 	};
 	
+	_clothesTaken = _cursorTarget getVariable["clothesTaken",false];
+
+    // Take clothes by Zabn
+    // Line2.lv Forum Support
+
+    if (_isMan and !_isAlive and !_isZombie and !_clothesTaken) then {
+        if (s_player_clothes < 0) then {
+            s_player_clothes = player addAction [("<t color='#0096ff'>")+("Take Clothes")+("</t>"), "custom\TakeClothes\TakeClothes.sqf",[_cursorTarget], -10, false, true, "",""];
+        };
+    } else {
+        player removeAction s_player_clothes;
+        s_player_clothes = -1;
+        };
+	
 	//Repairing Vehicles
 	if ((dayz_myCursorTarget != _cursorTarget) && _isVehicle && !_isMan && _hasToolbox && (damage _cursorTarget < 1) && !_isDisallowRepair) then {
 		if (s_player_repair_crtl < 0) then {
@@ -1011,6 +1025,13 @@ if(_isModularDoor) then {
 	s_player_fillfuel = -1;
 	player removeAction s_player_studybody;
 	s_player_studybody = -1;
+	
+	    // Take Clothes by Zabn
+    // Line2.lv Forum Support
+
+    player removeAction s_player_clothes;
+    s_player_clothes = -1;
+	
 	//Dog
 	player removeAction s_player_tamedog;
 	s_player_tamedog = -1;

@@ -3076,4 +3076,23 @@ if (true) then
   _this setPos [16531.738, 18812.223, 3.6239624e-005];
 };
 
+_vehicle_394 = objNull;
+if (true) then
+{
+  _this = createVehicle ["Land_MBG_HeavyShelter", [16562.342, 18222.32, -0.016941112], [], 0, "CAN_COLLIDE"];
+  _vehicle_394 = _this;
+  _this setDir -80.986267;
+  _this setPos [16562.342, 18222.32, -0.016941112];
+};
+
+_vehicle_395 = objNull;
+if (true) then
+{
+  _this = createVehicle ["MAP_desk", [16560.801, 18220.303, -0.011998509], [], 0, "CAN_COLLIDE"];
+  _vehicle_395 = _this;
+  _this setDir 34.877613;
+  _this setPos [16560.801, 18220.303, -0.011998509];
+};
+
+
 };
