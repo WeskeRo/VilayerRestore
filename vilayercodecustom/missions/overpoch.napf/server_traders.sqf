@@ -165,14 +165,14 @@ menu_gsc_scientist1 = [
 ];
 // Revo Weapons
 menu_CIV_Contractor2_BAF = [
-	[["Revo Weapons",694],["Revo Ammo",695],["Revo Explosives",699]],  
+	[["Revo Weapons",694],["Revo Ammo",695],["Revo Explosives",699],["Reammo Truck",702]],  
 	[],
 	"neutral"	
 ];
 
 // Revo supplies
 menu_Rita_Ensler_EP1 = [
-	[["Revo Food",700],["Revo supplies",698]],  
+	[["Revo Food",701],["Revo supplies",698]],  
 	[],
 	"neutral"	
 ];

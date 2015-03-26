@@ -1381,7 +1381,7 @@ class Mission
 		{
 			position[]={10404.296,106.05455,8282.8232};
 			name="BanditVendor";
-			text="Bandit Vendor";
+			text="K2lu's Bandit Store";
 			type="mil_dot";
 			colorName="ColorRed";
 		};

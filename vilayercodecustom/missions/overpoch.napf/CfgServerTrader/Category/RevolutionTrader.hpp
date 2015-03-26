@@ -165,37 +165,66 @@ class Category_696 {
 
 class Category_697 {
 
-		class AW159_Lynx_BAF {
-		type = "trade_any_vehicle";
-		buy[] = {5000000,"Coins"};
-		sell[] = {600000,"Coins"};
-		};
-		
-		class Ka60_GL_PMC {
-		type = "trade_any_vehicle";
-		buy[] = {5000000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-
-		class Mi171Sh_rockets_CZ_EP1 {
+class AH1Z {
 		type = "trade_any_vehicle";
 		buy[] = {6600000,"Coins"};
 		sell[] = {1800000,"Coins"};
 		};
 
-		class Mi24_D_TK_EP1 {
+class AH64D {
 		type = "trade_any_vehicle";
 		buy[] = {6000000,"Coins"};
 		sell[] = {1800000,"Coins"};
 		};
 
-		class AH64D_EP1 {
+class AW159_Lynx_BAF {
+		type = "trade_any_vehicle";
+		buy[] = {5000000,"Coins"};
+		sell[] = {600000,"Coins"};
+		};
+
+class Mi17_CDF {
 		type = "trade_any_vehicle";
 		buy[] = {6000000,"Coins"};
 		sell[] = {2500000,"Coins"};
 		};
+		
+class Mi171Sh_rockets_CZ_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {6600000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+		
+class Mi24_D_TK_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
 
+class Ka52 {
+		type = "trade_any_vehicle";
+		buy[] = {6600000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
 
+class Ka52Black {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+		
+class Ka60_GL_PMC {
+		type = "trade_any_vehicle";
+		buy[] = {5000000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+class Ka137_MG_PMC {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {2500000,"Coins"};
+		};
+		
 };
 
 class Category_698 {
@@ -257,6 +286,34 @@ class Category_699 {
 		type = "trade_items";
 		buy[] = {100000,"Coins"};
 		sell[] = {50000,"Coins"};
+		};
+		
+};
+
+class Category_702 {
+
+		class MtvrReammo_DES_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {1000000,"Coins"};
+		sell[] = {850000,"Coins"};
+		};
+		
+		class UralReammo_CDF {
+		type = "trade_any_vehicle";
+		buy[] = {1000000,"Coins"};
+		sell[] = {850000,"Coins"};
+		};
+
+		class KamazReammo {
+		type = "trade_any_vehicle";
+		buy[] = {1000000,"Coins"};
+		sell[] = {850000,"Coins"};
+		};
+		
+		class V3S_Reammo_TK_GUE_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {1000000,"Coins"};
+		sell[] = {850000,"Coins"};
 		};
 		
 };
