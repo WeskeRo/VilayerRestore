@@ -32,7 +32,7 @@ DZE_MissionLootTable = true;
 spawnShoremode = 0; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 // 
-MaxVehicleLimit = 300; // Default = 50
+MaxVehicleLimit = 500; // Default = 50
 MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 18000; // Default = 10000
 
@@ -56,7 +56,7 @@ DZE_vectorDegrees = [0.01, 0.1, 1, 5, 15, 45, 90];
 DZE_curDegree = 45; //Starting rotation angle. //Prefered any value in array above
 DZE_dirWithDegrees = true; //When rotating objects with Q&E, use the custom degrees
 
-EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
+EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"],["any","any","any","any",15,"construction"],["any","any","any","any",30,"military"],["any","any","any","any",45,"supplyitems"],["any","any","any","any",59,"treasure"]];
 dayz_fullMoonNights = true;
 
 DZE_ConfigTrader = true;

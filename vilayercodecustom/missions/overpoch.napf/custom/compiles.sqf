@@ -109,6 +109,10 @@ if (!isDedicated) then {
 	snap_build = compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
 	dayz_spaceInterrupt = compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
 	
+	MaintainPlot    				= compile preprocessFileLineNumbers "plotManagement\maintain_area.sqf";
+	PlotPreview    					= compile preprocessFileLineNumbers "plotManagement\plotToggleMarkers.sqf";
+	PlotObjects                     = compile preprocessFileLineNumbers "plotManagement\plotObjects.sqf"; // NEW
+	
 
 	player_unlockVault =			compile preprocessFileLineNumbers "custom\BuildVectors\compile\player_unlockVault.sqf";
 	player_lockVault =				compile preprocessFileLineNumbers "custom\BuildVectors\compile\player_lockVault.sqf";
