@@ -99,6 +99,26 @@ _debug_marker setMarkerColor "ColorYellow";
 _debug_marker setMarkerAlpha 1;
 };
  
+ 
+  /////MESSAGE
+ 
+ _msgDebug = "<t align='center' color='#FF0000' shadow='2' size='1.75'>Warning!!</t><br/><img size='4.75' image='Nuke\GUI\nuke.paa'/><br/><t align='center' color='#ffffff'>TEST MESSAGE OF TREASURE MISSION!.</t>";
+ 
+ [nil, nil, rspawn, [_msgDebug], {if (isNil "hint_debug_msn") then {hint_debug_msn=false;};
+ if (debugMonitor)then 
+	{
+	hint_debug_msn=true;debugMonitor=false;
+	};
+	hint parseText (_this select 0);
+	sleep 15;
+if (hint_debug_msn) then
+    {
+	hint_debug_msn=false;
+	debugMonitor=true;
+	[] spawn fnc_debug;
+	};}] call RE;
+ 
+ 
 diag_log(format["Creating ammo box at %1", _loot_pos]);
  
 // Create ammo box
