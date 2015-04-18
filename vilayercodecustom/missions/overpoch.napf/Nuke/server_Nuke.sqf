@@ -43,26 +43,25 @@ if (isNil "TayTayfirstNR") then {
                 TTDropSpot = createVehicle ["HeliHEmpty",TTnukeTrigger,[], 0, "NONE"];
                 siren = createVehicle ["HeliHEmpty",TTDropSpot,[], 0, "NONE"];
 			
-               // TTDropSpot SAY "eve"; sleep 2; siren SAY "puk";
+                TTDropSpot SAY "eve"; sleep 2; siren SAY "puk";
 			
                 _sirenPlayCnt = 0;
 			
-                while {(_sirenPlayCnt < 18)} do
+                while {(_sirenPlayCnt < 10)} do
                 {
-                    TTDropSpot SAY "nam"; sleep 9;
+                    TTDropSpot SAY "nam"; sleep 8;
                     _sirenPlayCnt = _sirenPlayCnt + 1;
                     sleep 1;
                 };
 			
-               // if (_sirenPlayCnt < 3) then
-               // {
-               //     TTDropSpot SAY "nam"; sleep 7; siren SAY "nam"; sleep 8;
-                //    TTDropSpot SAY "nam"; sleep 7;
-                //};
-
-				
-                //TTDropSpot SAY "eve"; sleep 10;
-                //siren SAY "puk"; sleep 90;
+                if (_sirenPlayCnt < 3) then
+                {
+                    TTDropSpot SAY "nam"; sleep 7; siren SAY "nam"; sleep 8;
+                    TTDropSpot SAY "nam"; sleep 7;
+                };
+			
+                TTDropSpot SAY "eve"; sleep 10;
+                siren SAY "puk"; sleep 90;
 			
                 deleteVehicle siren;
 				

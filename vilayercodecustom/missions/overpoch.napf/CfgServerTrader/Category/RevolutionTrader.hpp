@@ -160,7 +160,7 @@ class Category_696 {
 		buy[] = {4000000,"Coins"};
 		sell[] = {1000000,"Coins"};
 		};
-
+		
 		class Stinger_Pod_US_EP1 {
 		type = "trade_any_vehicle";
 		buy[] = {3000000,"Coins"};
@@ -170,61 +170,67 @@ class Category_696 {
 
 class Category_697 {
 
-class AH1Z {
-		type = "trade_any_vehicle";
-		buy[] = {6600000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-
-class AH64D {
-		type = "trade_any_vehicle";
-		buy[] = {6000000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-
-class AW159_Lynx_BAF {
+		class AW159_Lynx_BAF {
 		type = "trade_any_vehicle";
 		buy[] = {5000000,"Coins"};
 		sell[] = {600000,"Coins"};
 		};
-
-class Mi17_CDF {
-		type = "trade_any_vehicle";
-		buy[] = {6000000,"Coins"};
-		sell[] = {2500000,"Coins"};
-		};
 		
-class Mi171Sh_rockets_CZ_EP1 {
-		type = "trade_any_vehicle";
-		buy[] = {6600000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-		
-class Mi24_D_TK_EP1 {
-		type = "trade_any_vehicle";
-		buy[] = {6000000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-
-class Ka52 {
-		type = "trade_any_vehicle";
-		buy[] = {6600000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-
-class Ka52Black {
-		type = "trade_any_vehicle";
-		buy[] = {6000000,"Coins"};
-		sell[] = {1800000,"Coins"};
-		};
-		
-class Ka60_GL_PMC {
+		class Ka60_GL_PMC {
 		type = "trade_any_vehicle";
 		buy[] = {5000000,"Coins"};
 		sell[] = {1800000,"Coins"};
 		};
 
-class Ka137_MG_PMC {
+		class Mi171Sh_rockets_CZ_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {6600000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+		class Mi24_D_TK_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+		class AH64D_EP1 {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {2500000,"Coins"};
+		};
+
+		class AH1Z {
+		type = "trade_any_vehicle";
+		buy[] = {6600000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+		class AH64D {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+		class Mi17_CDF {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {2500000,"Coins"};
+		};
+
+		class Ka52 {
+		type = "trade_any_vehicle";
+		buy[] = {6600000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+		class Ka52Black {
+		type = "trade_any_vehicle";
+		buy[] = {6000000,"Coins"};
+		sell[] = {1800000,"Coins"};
+		};
+
+		class Ka137_MG_PMC {
 		type = "trade_any_vehicle";
 		buy[] = {6000000,"Coins"};
 		sell[] = {2500000,"Coins"};
@@ -297,7 +303,7 @@ class Category_699 {
 
 class Category_702 {
 
-		class MtvrReammo_DES_EP1 {
+		class MTVR_Reammo_DES_EP1 {
 		type = "trade_any_vehicle";
 		buy[] = {1000000,"Coins"};
 		sell[] = {850000,"Coins"};
