@@ -1769,8 +1769,8 @@ class Intro
 	randomSeed=6913869;
 	class Intel
 	{
-		startWeather=0.05;
-		forecastWeather=0.05;
+		startWeather=0;
+		forecastWeather=0;
 		year=2008;
 		month=10;
 		day=11;
@@ -1791,8 +1791,8 @@ class OutroWin
 	randomSeed=4081731;
 	class Intel
 	{
-		startWeather=0.05;
-		forecastWeather=0.05;
+		startWeather=0;
+		forecastWeather=0;
 		year=2008;
 		month=10;
 		day=11;
@@ -1813,8 +1813,8 @@ class OutroLoose
 	randomSeed=4975929;
 	class Intel
 	{
-		startWeather=0.05;
-		forecastWeather=0.05;
+		startWeather=0;
+		forecastWeather=0;
 		year=2008;
 		month=10;
 		day=11;

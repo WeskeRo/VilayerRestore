@@ -95,8 +95,8 @@ DonatorMenu =
 FunMenu =
 [
 		["",true],
-		["Dante's Dance", [2], "", -5, [["expression", format[EXECscript7, "dance1.sqf"]]], "1", "1"],
-		["Patrick's Dance", [3],  "", -5, [["expression", format[EXECscript7,"dance2.sqf"]]], "1", "1"],
+		["Ballou's Dance", [2], "", -5, [["expression", format[EXECscript7, "dance1.sqf"]]], "1", "1"],
+		["Sagrath's Dance", [3],  "", -5, [["expression", format[EXECscript7,"dance2.sqf"]]], "1", "1"],
 		["Ahmed's Dance", [5],  "", -5, [["expression", format[EXECscript7,"dance3.sqf"]]], "1", "1"],
 		["Boxing", [6],  "", -5, [["expression", format[EXECscript7,"boxing.sqf"]]], "1", "1"],
 		["Handstand", [7],  "", -5, [["expression", format[EXECscript7,"handstand.sqf"]]], "1", "1"],

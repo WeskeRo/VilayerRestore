@@ -193,7 +193,7 @@ if (true) then
   _this setPos [3352.8755, 7441.5532, 7.4606071];
 };
 
-
+*/
 // Bandit Outpost
 _vehicle_398 = objNull;
 if (true) then
@@ -243,7 +243,7 @@ if (true) then
   _this setPos [5607.0659, 2362.8831, 0];
 };
 
-*/
+
 
 
 

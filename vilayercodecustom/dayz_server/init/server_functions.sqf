@@ -978,7 +978,7 @@ server_logUnlockLockEvent = {
 	};
 };
 
-//execVM "\z\addons\dayz_server\map\bandit_outpost.sqf";
+execVM "\z\addons\dayz_server\map\bandit_outpost.sqf";
 //execVM "\z\addons\dayz_server\map\airport.sqf";
 execVM "\z\addons\dayz_server\map\castle_czarek.sqf";
 execVM "\z\addons\dayz_server\map\castle_pati.sqf";

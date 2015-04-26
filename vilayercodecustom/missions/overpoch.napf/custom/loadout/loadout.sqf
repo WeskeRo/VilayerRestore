@@ -47,7 +47,7 @@ if ((getPlayerUID player) in ["76561198045649040"]) then {
 //Dante  15/04/2015
 if ((getPlayerUID player) in ["76561198042398093"]) then {  
 	DefaultMagazines = ["8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","8Rnd_9x18_MakarovSD","RH_20Rnd_762x51_SD_hk417","RH_20Rnd_762x51_SD_hk417","RH_20Rnd_762x51_SD_hk417","Skin_Sniper1_DZ","ItemBandage","ItemBandage","ItemBandage","ItemBandage","ItemMorphine","ItemMorphine","ItemPainkiller","ItemBloodbag","ItemSodaMdew","FoodSteakCooked"];
-	DefaultWeapons = ["Binocular_Vector","ItemCrowbar","ItemHatchet","ItemMatchbox","NVGoggles","ItemCompass","ItemGPS","ItemMap","ItemToolbox","ItemRadio","RH_hk417sdsp","MakarovSD"];
+	DefaultWeapons = ["Binocular_Vector","ItemCrowbar","ItemHatchet","ItemEtool","ItemKnife","ItemMatchbox","NVGoggles","ItemCompass","ItemGPS","ItemMap","ItemToolbox","ItemRadio","RH_hk417sdsp","MakarovSD"];
 	DefaultBackpack = "DZ_LargeGunBag_EP1";
-	DefaultBackpackItems = ["PartVRotor","PartEngine"];
+	DefaultBackpackItems = ["PartVRotor","PartEngine",10Rnd_127x99_m107","10Rnd_127x99_m107","10Rnd_127x99_m107","10Rnd_127x99_m107","M107_DZ","ItemPainkiller"];
 };

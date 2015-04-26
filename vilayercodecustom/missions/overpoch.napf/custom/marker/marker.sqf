@@ -66,12 +66,12 @@ _ai4  = _ai4;
 //_ai5  = _ai5;
 
 //Bandit Outpost
-//_ai6  = createMarker ["_ai6 ", [5619.9473, 2335.8362]];
-//_ai6  setMarkerText "Bandit Outpost";
-//_ai6  setMarkerType "Defend";
-//_ai6  setMarkerColor "ColorRED";
-//_ai6  setMarkerSize [1, 1];
-//_ai6  = _ai6;
+_ai6  = createMarker ["_ai6 ", [5619.9473, 2335.8362]];
+_ai6  setMarkerText "Bandit Outpost";
+_ai6  setMarkerType "Defend";
+_ai6  setMarkerColor "ColorRED";
+_ai6  setMarkerSize [1, 1];
+_ai6  = _ai6;
 
 //USMC base
 //usmc  = createMarker ["usmc ", [996.926, 3667.27]];
