@@ -1,6 +1,6 @@
 private ["_spawnChance", "_spawnMarker", "_spawnRadius", "_markerRadius", "_item", "_debug", "_start_time", "_loot", "_loot_amount", "_loot_box", "_wait_time", "_spawnRoll", "_position", "_event_marker", "_loot_pos", "_debug_marker","_loot_box", "_hint"];
  
-_spawnChance =  0.75; // Percentage chance of event happening
+_spawnChance =  0.9; // Percentage chance of event happening
 _markerRadius = 350; // Radius the loot can spawn and used for the marker
 _debug = false; // Puts a marker exactly were the loot spawns
 
@@ -142,14 +142,6 @@ _loot_box addWeaponCargoGlobal [_x,1];
 {
 _loot_box addMagazineCargoGlobal [_x,1];
 } forEach (_loot select 1);
- 
-// Send Top Right message to users , requires Remote message script
-_hint = parseText format["<t align='center' color='#0D00FF' shadow='2' size='1.75'>Supply Crate</t><br/><t align='center' color='#ffffff'>UN Agency drops life-saving supplies for Survivors, Check your Map for the Location!</t>"];
-customRemoteMessage = ['hint', _hint];
-publicVariable "customRemoteMessage";
-
-// Send center message to users 
-//[nil,nil,rTitleText,"UN Agency drops life-saving supplies for Survivors, Check your Map for the Location!", "PLAIN",10] call RE;
 
 diag_log(format["Loot event setup, waiting for %1 seconds", _wait_time]);
 

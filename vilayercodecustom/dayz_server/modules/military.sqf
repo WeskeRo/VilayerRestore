@@ -141,14 +141,6 @@ _loot_box addWeaponCargoGlobal [_x,1];
 {
 _loot_box addMagazineCargoGlobal [_x,1];
 } forEach (_loot select 1);
- 
-// Send Top Right message to users , requires Remote message script
-_hint = parseText format["<t align='center' color='#FF0000' shadow='2' size='1.75'>Military Crate</t><br/><t align='center' color='#ffffff'>A special forces unit lost a precious cargo, Check your Map for the Location!</t>"];
-customRemoteMessage = ['hint', _hint];
-publicVariable "customRemoteMessage";
-
-// Send center message to users 
-//[nil,nil,rTitleText,"A special forces unit lost a precious cargo, Check your Map for the Location!", "PLAIN",10] call RE;
 
 diag_log(format["Loot event setup, waiting for %1 seconds", _wait_time]);
 
