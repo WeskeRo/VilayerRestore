@@ -105,7 +105,7 @@ _debug_marker setMarkerAlpha 1;
  
   /////MESSAGE
  
- _msgDebug = "<t align='center' color='#FF0000' shadow='2' size='1.75'>Warning!!</t><br/><img size='4.75' image='Nuke\GUI\nuke.paa'/><br/><t align='center' color='#ffffff'>TEST MESSAGE OF TREASURE MISSION!.</t>";
+ _msgDebug = "<t align='center' color='#FF0000' shadow='2' size='1.75'>Attention!</t><br/><img size='4.75' image='custom\GUI\treasure_hunt\Military_ICON.paa'/><br/><t align='center' color='#ffffff'>USMC lost a crate full of guns, ammmunition and explosives. Find it befere anyone else will.</t>";
  
  [nil, nil, rspawn, [_msgDebug], {if (isNil "hint_debug_msn") then {hint_debug_msn=false;};
  if (debugMonitor)then 

@@ -102,8 +102,7 @@ _debug_marker setMarkerAlpha 1;
  
   /////MESSAGE
  
- _msgDebug = "<t align='center' color='#FF0000' shadow='2' size='1.75'>Warning!!</t><br/><img size='4.75' image='Nuke\GUI\nuke.paa'/><br/><t align='center' color='#ffffff'>TEST MESSAGE OF TREASURE MISSION!.</t>";
- 
+ _msgDebug = "<t align='center' color='#FF0000' shadow='2' size='1.75'>Attention!</t><br/><img size='4.75' image='custom\GUI\treasure_hunt\Treasure_ICON.paa'/><br/><t align='center' color='#ffffff'>Misterious box was dropped from unmarked helicopter. What's in it? HotWire kits? Money? Rocket Launcher? Find it and check it befere anyone else will.</t>"; 
  [nil, nil, rspawn, [_msgDebug], {if (isNil "hint_debug_msn") then {hint_debug_msn=false;};
  if (debugMonitor)then 
 	{
@@ -145,7 +144,7 @@ customRemoteMessage = ['hint', _hint];
 publicVariable "customRemoteMessage";
 
 // Send center message to users 
-//[nil,nil,rTitleText,"Bandits or Pirates? We found their treasure, Check your Map for the Location!", "PLAIN",10] call RE;
+[nil,nil,rTitleText,"Bandits or Pirates? We found their treasure, Check your Map for the Location!", "PLAIN",10] call RE;
 
 diag_log(format["Loot event setup, waiting for %1 seconds", _wait_time]);
 
